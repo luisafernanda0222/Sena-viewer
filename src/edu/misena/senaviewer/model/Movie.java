@@ -10,14 +10,14 @@ public class Movie {
     String viewed;
     int timeViewed;
 
-    public Movie(String title,  String genre,  String creator,int duration,int year) {
+    public Movie(String title, String genre, String creator, int duration, int year) {
         this.title = title;
         this.genre = genre;
-        this.creator=creator;
-        this.duration=duration;
+        this.creator = creator;
+        this.duration = duration;
         this.year = year;
         this.viewed = "";
-        this.timeViewed =timeViewed;
+        this.timeViewed = timeViewed;
 
     }
     //Getter y Setters
@@ -85,3 +85,4 @@ public class Movie {
     public void setTimeViewed(int timeViewed) {
         this.timeViewed = timeViewed;
     }
+}
