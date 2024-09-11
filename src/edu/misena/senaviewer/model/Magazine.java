@@ -13,7 +13,6 @@ public class Magazine{
         this.title = title;
         this.editionDate = editionDate;
         this.editorial = editorial;
-        this.authors = new ArrayList<>();
     }
 
     public int getId() {

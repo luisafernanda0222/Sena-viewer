@@ -1,87 +1,32 @@
 package edu.misena.senaviewer.model;
 
-public class Movie {
-    int id;
-    String title;
-    String genre;
-    String creator;
-    String duration;
-    int year;
-    String viewed;
-    int timeViewed;
+public class Movie extends Film {
 
+    private int movieYear;
 
-    public Movie(String title, String genre, String creator, String duration, int year) {
-        this.title = title;
-        this.genre = genre;
-        this.creator = creator;
-        this.duration = duration;
-        this.year = year;
-        this.viewed = "No";
-        this.timeViewed = 0;
+    // Constructor
+    public Movie(String title, String genre, String creator, String duration, int movieYear) {
+        super(title, genre, creator, duration);
+        this.movieYear = movieYear;
     }
 
-    public int getId() {
-        return id;
+    // Getter y Setter para movieYear
+    public int getMovieYear() {
+        return movieYear;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setMovieYear(int movieYear) {
+        this.movieYear = movieYear;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
-    }
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-    public String getDuration() {
-        return duration;
-    }
-
-    public void setDuration(String duration) {
-        this.duration = duration;
-    }
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-    public String getViewed() {
-        return viewed;
-    }
-
-    public void setViewed(String viewed) {
-        this.viewed = viewed;
-    }
-
-    public int getTimeViewed() {
-        return timeViewed;
-    }
-
-    public void setTimeViewed(int timeViewed) {
-        this.timeViewed = timeViewed;
+    //metodo para mostrar la informaciòn
+    public String toString() {
+        return "Movie{" +
+                "Title='" + getTitle() + '\'' +
+                ", Genre='" + getGenre() + '\'' +
+                ", Creator='" + getCreator() + '\'' +
+                ", Duration='" + getDuration() + '\'' +
+                ", Movie Year=" + movieYear +
+                '}';
     }
 }
