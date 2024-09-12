@@ -1,102 +1,58 @@
 package edu.misena.senaviewer.model;
 
-public class Serie {
-    int id;
-    String title;
-    String genre;
-    String creator;
-    int duration;
-    int year;
-    boolean viewed;
-    int timeViewed;
-    int sessionQuantity;
+public class Serie extends Film {
+    int seasons;
+    int episodesPerSeason;
+    int totalEpisodes;
 
-    public Serie(String title, String genre, int duration) {
-        this.title = title;
-        this.genre = genre;
-        this.duration = duration;
-        this.viewed = false;
-        this.timeViewed = 0;
-    }
-    //Getter y Setters
+    // Constructor
 
-    public int getId() {
-        return id;
+    public Serie(String title, String genre, String creator, String duration, int seasons, int episodesPerSeason) {
+
+        // Llamar al constructor de la clase padre Film
+
+        super(title, genre, creator, duration);
+        this.seasons = seasons;
+        this.episodesPerSeason = episodesPerSeason;
+        this.totalEpisodes = seasons * episodesPerSeason;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    // Getters y Setters
+
+    public int getSeasons() {
+        return seasons;
     }
 
-
-    public String getTitle() {
-        return title;
+    public void setSeasons(int seasons) {
+        this.seasons = seasons;
+        this.totalEpisodes = seasons * this.episodesPerSeason;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public int getEpisodesPerSeason() {
+        return episodesPerSeason;
     }
 
-
-    public String getGenre() {
-        return genre;
+    public void setEpisodesPerSeason(int episodesPerSeason) {
+        this.episodesPerSeason = episodesPerSeason;
+        this.totalEpisodes = this.seasons * episodesPerSeason;
     }
 
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public int getTotalEpisodes() {
+        return totalEpisodes;
     }
 
-
-    public String getCreator() {
-        return creator;
-    }
-
-    public void setCreator(String creator) {
-        this.creator = creator;
-    }
-
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-
-    public int getYear() {
-        return year;
-    }
-
-    public void setYear(int year) {
-        this.year = year;
-    }
-
-
-    public boolean isViewed() {
-        return viewed;
-    }
-
-    public void setViewed(boolean viewed) {
-        this.viewed = viewed;
-    }
-
-
-    public int getTimeViewed() {
-        return timeViewed;
-    }
-
-    public void setTimeViewed(int timeViewed) {
-        this.timeViewed = timeViewed;
-    }
-
-
-    public int getSessionQuantity() {
-        return sessionQuantity;
-    }
-
-    public void setSessionQuantity(int sessionQuantity) {
-        this.sessionQuantity = sessionQuantity;
+    // Método para mostrar la información de Series
+    @Override
+    public String toString() {
+        return "Series{" +
+                "Title='" + getTitle() + '\'' +
+                ", Genre='" + getGenre() + '\'' +
+                ", Creator='" + getCreator() + '\'' +
+                ", Duration='" + getDuration() + '\'' +
+                ", Seasons=" + seasons +
+                ", Episodes per Season=" + episodesPerSeason +
+                ", Total Episodes=" + totalEpisodes +
+                ", Viewed=" + isViewed() +
+                '}';
     }
 }

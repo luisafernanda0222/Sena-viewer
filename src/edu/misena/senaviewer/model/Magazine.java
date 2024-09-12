@@ -1,58 +1,39 @@
-
 package edu.misena.senaviewer.model;
 
-public class Magazine {
-    int id;
-    String title;
-    String edititionDate;
-    String editorial;
-    String authors;
+public class Magazine extends Publication {
 
-    public Magazine(String title, String edititionDate, String editorial) {
-        this.title = title;
-        this.edititionDate = edititionDate;
-        this.editorial = editorial;
-        this.authors = authors;
+    // Atributo específico de Magazine
+
+    private int issueNumber;
+
+    // Constructor
+    public Magazine(String title, String editionDate, String editorial, int issueNumber) {
+
+        // Llamar al padre Publication
+
+        super(title, editionDate, editorial);
+        this.issueNumber = issueNumber;
     }
 
-    //Getter y Setters
-    public int getId() {
-        return id;
+    // Getter y Setter
+
+    public int getIssueNumber() {
+        return issueNumber;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setIssueNumber(int issueNumber) {
+        this.issueNumber = issueNumber;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getEdititionDate() {
-        return edititionDate;
-    }
-
-    public void setEdititionDate(String edititionDate) {
-        this.edititionDate = edititionDate;
-    }
-
-    public String getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        this.editorial = editorial;
-    }
-
-    public String getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(String authors) {
-        this.authors = authors;
+    // Método toString() para mostrar la información de Magazine
+    @Override
+    public String toString() {
+        return "Magazine{" +
+                "Title='" + getTitle() + '\'' +
+                ", Edition Date='" + getEditionDate() + '\'' +
+                ", Editorial='" + getEditorial() + '\'' +
+                ", Issue Number=" + issueNumber +
+                ", Authors=" + getAuthors() +
+                '}';
     }
 }

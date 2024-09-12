@@ -75,4 +75,3 @@ public class Chapter {
         this.sessionNumber = sessionNumber;
     }
 }
-

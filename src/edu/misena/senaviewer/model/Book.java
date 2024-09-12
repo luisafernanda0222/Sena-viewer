@@ -1,88 +1,41 @@
 package edu.misena.senaviewer.model;
 import java.util.List;
 
-public class Book {
-    int id;
-    String title;
-    String edititionDate;
-    String editorial;
-    List<String> authors;
-    String isbn;
-    boolean readed;
-    int timeReaded;
+public class Book extends Publication {
 
-    public Book(String title, String edititionDate, String editorial, String isbn) {
-        this.title = title;
-        this.edititionDate = edititionDate;
-        this.editorial = editorial;
-        this.isbn = isbn;
-        this.readed = false;
-        this.timeReaded = 0;
+    // atributo especifico de book
+
+    private int totalPages;
+
+    // Constructor
+
+    public Book(String title, String edititionDate, String editorial, int totalPages) {
+
+        // Llmar al constructor padre de publication
+
+        super(title, edititionDate, editorial);
+        this.totalPages = totalPages;
 
     }
-    //Getter y Setters
+    // Getter y Setter para totalPages
 
-    public int getId() {
-        return id;
+    public int getTotalPages() {
+        return totalPages;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setTotalPages(int totalPages) {
+        this.totalPages = totalPages;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getEdititionDate() {
-        return edititionDate;
-    }
-
-    public void setEdititionDate(String edititionDate) {
-        this.edititionDate = edititionDate;
-    }
-
-    public String getEditorial() {
-        return editorial;
-    }
-
-    public void setEditorial(String editorial) {
-        this.editorial = editorial;
-    }
-
-    public List<String> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(List<String> authors) {
-        this.authors = authors;
-    }
-
-    public String getIsbn() {
-        return isbn;
-    }
-
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
-
-    public boolean isReaded() {
-        return readed;
-    }
-
-    public void setReaded(boolean readed) {
-        this.readed = readed;
-    }
-
-    public int getTimeReaded() {
-        return timeReaded;
-    }
-
-    public void setTimeReaded(int timeReaded) {
-        this.timeReaded = timeReaded;
+    //metodo para mostrar la información de book
+    @Override
+    public String toString() {
+        return "Book{" +
+                "Title='" + getTitle() + '\'' +
+                ", Edition Date='" + getEditionDate() + '\'' +
+                ", Editorial='" + getEditorial() + '\'' +
+                ", Total Pages=" + totalPages +
+                ", Authors=" + getAuthors() +
+                '}';
     }
 }
